@@ -1,12 +1,20 @@
-#include "bleeckeys.dtsi" // The shared dtsi file is included in the overlay
+#include "bleeckeys.dtsi"
 
-// Label of the kscan node in the dtsi
+&pro_micro {
+    led_strip: ws2812 {
+        compatible = "worldsemi,ws2812-gpio";
+        in-gpios = <&pro_micro 1 GPIO_ACTIVE_HIGH>;
+        chain-length = <6>;
+        label = "LED_STRIP";
+        color-order = "GRB";
+        status = "okay";
+    };
+};
+
 &kscan0 {
-    col-gpios
-        = <&pro_micro 18 GPIO_ACTIVE_HIGH>
-        , <&pro_micro 15 GPIO_ACTIVE_HIGH>
-        , <&pro_micro 14 GPIO_ACTIVE_HIGH>
-        , <&pro_micro 16 GPIO_ACTIVE_HIGH>
-        , <&pro_micro 10 GPIO_ACTIVE_HIGH>
-        ;
+    col-gpios = <&pro_micro 18 GPIO_ACTIVE_HIGH>,
+                <&pro_micro 15 GPIO_ACTIVE_HIGH>,
+                <&pro_micro 14 GPIO_ACTIVE_HIGH>,
+                <&pro_micro 16 GPIO_ACTIVE_HIGH>,
+                <&pro_micro 10 GPIO_ACTIVE_HIGH>;
 };
