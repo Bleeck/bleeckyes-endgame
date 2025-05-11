@@ -6,7 +6,7 @@
         in-gpios = <&pro_micro 1 GPIO_ACTIVE_HIGH>;
         chain-length = <6>;
         label = "LED_STRIP";
-        color-order = "GRB";
+        color-mapping = <1 0 2>; // GRB order: G=1, R=0, B=2
         status = "okay";
     };
 };
