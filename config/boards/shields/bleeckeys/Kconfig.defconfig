@@ -9,9 +9,8 @@ config ZMK_SPLIT_ROLE_CENTRAL
 
 config I2C
 	default y
-    
-config CONFIG_ZMK_POINTING
-    default y
+
+CONFIG_ZMK_POINTING=y
 
 endif
 
