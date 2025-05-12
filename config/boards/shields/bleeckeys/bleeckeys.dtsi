@@ -35,11 +35,34 @@
       >;
     };
 
-};
+    /* If you want the left side to be central, uncomment it.*/
+    split_inputs {
+        #address-cells = <1>;
+        #size-cells = <0>;
 
-/ {
+        glidepoint_split: glidepoint_split@0 {
+            compatible = "zmk,input-split";
+            reg = <0>;
+        };
+    };
     glidepoint_listener: glidepoint_listener {
         compatible = "zmk,input-listener";
         status = "disabled";
+        device = <&glidepoint>;
+    };
+};
+
+&pro_micro_i2c {
+    status = "okay";
+
+    glidepoint: glidepoint@2a {
+        compatible = "cirque,pinnacle";
+        reg = <0x2a>;
+        status = "disabled";
+        dr-gpios = <&pro_micro 1 (GPIO_ACTIVE_HIGH)>;
+
+        sensitivity = "4x";
+        sleep; 
+        no-taps;
     };
 };

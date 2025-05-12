@@ -9,10 +9,6 @@ config ZMK_SPLIT_ROLE_CENTRAL
 
 CONFIG_ZMK_POINTING=y
 
-# Assuming pointing device uses SPI
-config SPI
-    default y
-
 
 endif
 
