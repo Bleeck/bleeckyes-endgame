@@ -28,26 +28,6 @@
                 <&pro_micro 10 GPIO_ACTIVE_HIGH>;
 };
 
-&pro_micro_spi {
-	status = "okay";
-	compatible = "nordic,nrf-spim";
-	pinctrl-0 = <&spi0_default>;
-	pinctrl-1 = <&spi0_sleep>;
-	pinctrl-names = "default", "sleep";
-	cs-gpios = <&pro_micro 9 GPIO_ACTIVE_LOW>;
-	
-	glidepoint: glidepoint@0 {
-		status = "okay";
-		compatible = "cirque,pinnacle";
-		reg = <0>;
-		spi-max-frequency = <1000000>;
-		dr-gpios = <&pro_micro 21 (GPIO_ACTIVE_HIGH)>;
-		
-		sensitivity = "4x";
-		sleep;
-		no-taps;
-	};
-};
 
 &glidepoint_listener  {
     status = "okay";
