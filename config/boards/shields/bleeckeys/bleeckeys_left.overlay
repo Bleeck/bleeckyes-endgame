@@ -51,5 +51,5 @@
 
 &glidepoint_listener  {
     status = "okay";
-    device = <&glidepoint_split>;
+    device = <&glidepoint>;
 };
