@@ -4,7 +4,7 @@
 
 / {
     chosen {
-        zephyr,display = &oled;
+        //zephyr,display = &oled;
         zmk,physical-layout = &physical_layout0;
         zmk,underglow = &led_strip;
         // Other chosen items
