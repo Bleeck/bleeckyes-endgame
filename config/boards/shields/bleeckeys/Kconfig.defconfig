@@ -7,6 +7,14 @@ config ZMK_KEYBOARD_NAME
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
 
+config ZMK_POINTING
+    default y
+
+# Assuming pointing device uses SPI
+config SPI
+    default y
+
+
 endif
 
 if SHIELD_BLEECKEYS_LEFT || SHIELD_BLEECKEYS_RIGHT
@@ -16,8 +24,7 @@ config ZMK_SPLIT
 
 if ZMK_DISPLAY
 
-config I2C
-    default y
+
 
 config SSD1306
     default y

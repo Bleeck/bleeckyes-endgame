@@ -70,3 +70,10 @@
         prechargep = <0x22>;
     };
 };
+
+/ {
+    glidepoint_listener: glidepoint_listener {
+        compatible = "zmk,input-listener";
+        status = "disabled";
+    };
+};
