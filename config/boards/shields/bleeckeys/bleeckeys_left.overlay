@@ -8,24 +8,11 @@
                 <&pro_micro 10 GPIO_ACTIVE_HIGH>;
 };
 
-// In this case, we added a cirque trackpad using the pro micro position i2c pins and a hand wired data ready pin
-&pro_micro_i2c {
-    status = "okay";
 
-    glidepoint: glidepoint@2a {
-        compatible = "cirque,pinnacle";
-        reg = <0x2a>;
-        status = "okay";
-        // The aforementioned LED data pin that we're not using, hand wired to cirque DR
-        dr-gpios = <&gpio0 6 (GPIO_ACTIVE_HIGH)>;
+&glidepoint{
+	status = "okay";
+}
 
-        sensitivity = "4x";
-        sleep;
-    };
-};
-
-// Overrides for the input listener node
 &glidepoint_listener {
-    status = "okay";
-    device = <&glidepoint>;
+	status = "okay";
 };
