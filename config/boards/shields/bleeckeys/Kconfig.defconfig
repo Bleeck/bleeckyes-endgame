@@ -10,6 +10,9 @@ config ZMK_SPLIT_ROLE_CENTRAL
 config ZMK_POINTING
     default y
 
+config CONFIG_ZMK_POINTING
+    default y
+
 # Assuming pointing device uses SPI
 config SPI
     default y
