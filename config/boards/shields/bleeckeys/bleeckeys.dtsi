@@ -38,18 +38,17 @@
 
 };
 
-
 &pro_micro_i2c {
-    status = "disabled";                            
+    status = "okay";
     glidepoint: glidepoint@2a {
         compatible = "cirque,pinnacle";
         reg = <0x2a>;
-        status = "disabled";
-        dr-gpios = <&gpio0 8 (GPIO_ACTIVE_HIGH)>;
+        status = "okay";
+        dr-gpios = <&gpio1 1 (GPIO_ACTIVE_HIGH)>;
 
-        sensitivity = "2x";
+        sensitivity = "4x";
         // sleep;
-        // no-taps;
+        no-taps;
     };
 };
 
@@ -58,8 +57,10 @@
     compatible = "zmk,input-listener";
     device = <&glidepoint>;
 
-//    xy-swap;
+    xy-swap;
     y-invert;
-//    x-invert;
+    x-invert;
+    scale-multiplier = <1>;
+    scale-divisor = <1>;
   };
 };
